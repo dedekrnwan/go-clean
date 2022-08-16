@@ -2,7 +2,7 @@ package usecase
 
 import (
 	repositoryFactory "github.com/dedekrnwan/go-clean/internal/factory/repository"
-	repositoryOrm "github.com/dedekrnwan/go-clean/internal/repository/orm"
+	repositoryOrm "github.com/dedekrnwan/go-clean/internal/repository"
 	"github.com/dedekrnwan/go-clean/model"
 )
 

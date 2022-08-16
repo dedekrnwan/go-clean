@@ -3,13 +3,13 @@ package repository
 import (
 	"github.com/dedekrnwan/go-clean/config"
 	"github.com/dedekrnwan/go-clean/internal/driven/database"
-	repositoryOrm "github.com/dedekrnwan/go-clean/internal/repository/orm"
+	"github.com/dedekrnwan/go-clean/internal/repository"
 	"gorm.io/gorm"
 )
 
 type Factory struct {
 	connection *gorm.DB
-	User       repositoryOrm.User
+	User       repository.User
 }
 
 func NewFactory() *Factory {
@@ -27,7 +27,7 @@ func NewFactory() *Factory {
 	f.connection = conn
 
 	//init repo
-	f.User = repositoryOrm.NewUser(f.connection)
+	f.User = repository.NewUser(f.connection)
 
 	return f
 }

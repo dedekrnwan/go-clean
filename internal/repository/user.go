@@ -1,25 +1,24 @@
-package orm
+package repository
 
 import (
 	"context"
-	"github.com/dedekrnwan/go-clean/internal/repository"
 	"github.com/dedekrnwan/go-clean/model"
 	"gorm.io/gorm"
 )
 
 type (
 	User interface {
-		repository.Orm[model.User, model.User]
+		Orm[model.User, model.User]
 		CountByEmail(ctx context.Context, email string) (int64, error)
 	}
 
 	user struct {
-		repository.Orm[model.User, model.User]
+		Orm[model.User, model.User]
 	}
 )
 
 func NewUser(connection *gorm.DB) User {
-	orm := repository.NewOrm(connection, model.User{}, model.User{})
+	orm := NewOrm(connection, model.User{}, model.User{})
 	return &user{
 		orm,
 	}
