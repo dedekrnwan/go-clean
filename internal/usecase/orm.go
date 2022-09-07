@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	"github.com/dedekrnwan/go-clean/internal/repository"
+	orm2 "github.com/dedekrnwan/go-clean/internal/repository/orm"
 	"github.com/dedekrnwan/go-clean/model"
 )
 
@@ -18,11 +18,11 @@ type (
 	}
 
 	orm[T any, Y any] struct {
-		model repository.Orm[T, Y]
+		model orm2.Orm[T, Y]
 	}
 )
 
-func NewOrm[T any, Y any](model repository.Orm[T, Y]) Orm[T, Y] {
+func NewOrm[T any, Y any](model orm2.Orm[T, Y]) Orm[T, Y] {
 	return &orm[T, Y]{
 		model,
 	}

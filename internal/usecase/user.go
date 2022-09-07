@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	repositoryFactory "github.com/dedekrnwan/go-clean/internal/factory/repository"
-	repositoryOrm "github.com/dedekrnwan/go-clean/internal/repository"
+	repositoryContract "github.com/dedekrnwan/go-clean/internal/contract/repository"
+	repositoryOrm "github.com/dedekrnwan/go-clean/internal/repository/orm"
 	"github.com/dedekrnwan/go-clean/model"
 )
 
@@ -19,10 +19,10 @@ type (
 )
 
 func NewUser(
-	factory *repositoryFactory.Factory,
+	r *repositoryContract.Contract,
 ) User {
 	return &user{
-		Orm:            NewOrm[model.User, model.User](factory.User),
-		repositoryUser: factory.User,
+		Orm:            NewOrm[model.User, model.User](r.Orm.User),
+		repositoryUser: r.Orm.User,
 	}
 }

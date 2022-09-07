@@ -3,7 +3,7 @@ package database
 import (
 	"errors"
 	"fmt"
-	"github.com/dedekrnwan/go-clean/config"
+	"github.com/dedekrnwan/go-clean/internal/config"
 	"strings"
 
 	"github.com/sirupsen/logrus"

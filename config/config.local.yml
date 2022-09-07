@@ -1,5 +1,5 @@
 server:
-  appname: go-clean
+  appname: api
   appkey: passphrasewhichneedstobe32bytes!
   port: 3001
   version: 1.0.1
@@ -16,7 +16,7 @@ databases:
     dbuser: postgres
     dbport: 5432
     dbpass:
-    dbname: postgres
+    dbname: api
     dbprovider: postgresql
     dbssl: disable
     dbtz: Asia/Jakarta
